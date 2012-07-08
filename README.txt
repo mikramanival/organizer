@@ -1,4 +1,5 @@
-organizer
+Doctor Organizer v1.0
 =========
 
-this is an organizer
+Fresh project.. not yet modified for application.
+
