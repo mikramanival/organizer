@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TabHost
+        android:id="@+id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:id="@+id/Schedule"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <CalendarView
+                        android:id="@+id/calendarView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Patients"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+                    
+						<RelativeLayout 
+				    			android:id="@+id/rel_pat"
+				    			android:layout_width="fill_parent"
+	                 			android:layout_height="wrap_content" >
+
+	                   			    <Button
+	                   			        android:id="@+id/in"
+	                   			        style="?android:attr/buttonStyleSmall"
+	                   			        android:layout_width="wrap_content"
+	                   			        android:layout_height="35dp"
+	                   			        android:layout_alignParentLeft="true"
+	                   			        android:text="IN" />
+
+	                   			    <Button
+	                   			        android:id="@+id/out"
+	                   			        style="?android:attr/buttonStyleSmall"
+	                   			        android:layout_width="wrap_content"
+	                   			        android:layout_height="35dp"
+	                   			        android:layout_toRightOf="@+id/in"
+	                   			        android:layout_alignBaseline="@+id/in"
+	                   			        android:text="OUT" />
+						    
+	                   			    <ImageButton
+	                   			        android:id="@+id/addPat"
+	                   			        android:layout_width="35dp"
+	                   			        android:layout_height="35dp"
+	                   			        android:layout_alignParentRight="true"
+	                   			        android:src="@android:drawable/ic_input_add" />
+						    		
+	                   	</RelativeLayout>	
+	                  			 	  
+		  			   	<ListView
+		                      android:id="@+id/list_pat"
+		                      android:layout_width="match_parent"
+		                      android:layout_height="wrap_content" >
+	                   			    
+	                  	</ListView>
+	                  	
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/Contacts"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" 
+                    android:orientation="vertical" >
+					
+                    <RelativeLayout 
+				    			android:id="@+id/rel_con"
+				    			android:layout_width="fill_parent"
+	                 			android:layout_height="wrap_content" >
+	                   			    
+                   			    <ImageButton
+                   			        android:id="@+id/addCon"
+                   			        android:layout_width="35dp"
+                   			        android:layout_height="35dp"
+                   			        android:layout_alignParentRight="true"
+                   			        android:src="@android:drawable/ic_input_add" />
+					    		
+                   	</RelativeLayout>	
+
+                    <ListView
+                        android:id="@+id/list_con"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" >
+                    </ListView>
+
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</RelativeLayout>
