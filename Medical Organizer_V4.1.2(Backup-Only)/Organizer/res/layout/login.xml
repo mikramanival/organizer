@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <ImageView
+        android:id="@+id/med_sym"
+        android:layout_width="130dp"
+        android:layout_height="130dp"
+        android:layout_marginTop="25dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/med_symbol" />
+    
+    
+     <TextView android:id="@+id/n_label"
+        	  android:layout_height="wrap_content"
+        	  android:layout_width="wrap_content"
+        	  android:text="@string/name" 
+        	  android:textSize="25sp"
+        	  android:layout_below="@+id/med_sym"
+        	  android:layout_marginTop="15dp" />
+    
+    <EditText android:id="@+id/name"
+        	  android:inputType="textPersonName"
+        	  android:hint="@string/hint_name"
+        	  android:layout_height="wrap_content"
+        	  android:layout_width="fill_parent"
+        	  android:layout_below="@+id/n_label"
+        	  android:textSize="25sp"
+        	  android:layout_marginTop="10dp" />
+    
+      <TextView android:id="@+id/addr_label"
+        	  android:layout_height="wrap_content"
+        	  android:layout_width="wrap_content"
+        	  android:text="@string/hAddr" 
+        	  android:layout_below="@+id/name"
+        	  android:textSize="25sp"
+        	  android:layout_marginTop="15dp" />
+    
+    <EditText android:id="@+id/haddr"
+        	  android:inputType="textPassword"
+        	  android:layout_height="wrap_content"
+        	  android:layout_width="fill_parent"
+        	  android:layout_below="@+id/addr_label"
+        	  android:textSize="25sp"
+        	  android:layout_marginTop="10dp" />
+    
+    <Button android:id="@+id/submit"
+        	android:text="Submit"
+        	android:layout_below="@+id/haddr"
+        	android:layout_width="fill_parent"
+        	android:layout_height="wrap_content"
+        	android:layout_marginTop="15dp"/>
+
+    
+
+</RelativeLayout>
