@@ -1,7 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent" 
+    tools:context=".Main" >
 	
      <ImageButton
         android:id="@+id/add_con"
@@ -9,14 +11,18 @@
         android:layout_height="35dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:src="@android:drawable/ic_input_add" />
+        android:src="@android:drawable/ic_input_add" 
+        android:contentDescription="TODO"/>
 
-    <ListView
+    
+     <ListView
         android:id="@+id/list_con"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/add_con" >
-
+        android:layout_below="@+id/add_con"
+        android:fastScrollEnabled="true"
+        android:fastScrollAlwaysVisible="true" >
     </ListView>
+
     
 </RelativeLayout>

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+import com.organizer.medical.others.Contacts;
 import com.organizer.medical.others.Patients;
 
 import android.content.Context;
@@ -135,6 +136,13 @@ public class MedicalHelper extends SQLiteOpenHelper {
    	 	databaseConnect.execSQL(sql);
     }
     
+    //for ContactActivity
+    public void C_insertIntoDatabase(String table_name, Contacts c) throws SQLException{
+   	 	openDataBase();
+   	 	String sql = "INSERT into "+table_name+"(Address,C_number,Fname,Lname,Specialty)" +
+   	 				 "VALUES('"+c.getAddr()+"',"+c.getNum()+",'"+c.getFname()+"','"+c.getLname()+"','"+c.getSpec()+"');";
+   	 	databaseConnect.execSQL(sql);
+    }
     public Cursor retrieveAllDataWhere(String left_assign, String right_assign ){
    	 //Retrieve all data!
     	if(left_assign == "status")
