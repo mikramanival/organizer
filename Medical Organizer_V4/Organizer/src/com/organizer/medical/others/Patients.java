@@ -1,6 +1,7 @@
 package com.organizer.medical.others;
 
 public class Patients {
+private int id;
 private String fname;
 private String mi;
 private String lname;
@@ -9,6 +10,12 @@ private int age;
 private String med_history;
 private int pat_status;
 
+public int getId() {
+	return id;
+}
+public void setId(int id) {
+	this.id = id;
+}
 public String getFname() {
 	return fname;
 }

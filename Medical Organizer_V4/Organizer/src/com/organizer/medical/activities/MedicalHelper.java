@@ -4,10 +4,12 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.ContentHandler;
 
 import com.organizer.medical.others.Contacts;
 import com.organizer.medical.others.Patients;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.DatabaseErrorHandler;
@@ -16,6 +18,8 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.database.sqlite.SQLiteQueryBuilder;
+import android.util.Log;
 
 public class MedicalHelper extends SQLiteOpenHelper {
 
@@ -124,42 +128,76 @@ public class MedicalHelper extends SQLiteOpenHelper {
  
     }
     
+    @Override
+   	public synchronized void close() {
+    
+       	    if(databaseConnect != null)
+       		    databaseConnect.close();
+    
+       	    super.close();
+    
+   	}
+    
+/*=================READING VALUES FROM DB================*/    
     public Cursor retrieveAllData(String table_name) throws SQLException{
     	 //Retrieve all data!
-    	 return databaseConnect.rawQuery("SELECT * FROM "+table_name, null);
+    	openDataBase();
+    	return databaseConnect.rawQuery("SELECT * FROM "+table_name, null);
     }
-    
-    public void insertIntoDatabase(String table_name, Patients p) throws SQLException{
-   	 	openDataBase();
-   	 	String sql = "INSERT into "+table_name+"(firstname,middleinitial,lastname,address,age,med_history,status)" +
-   	 				 "VALUES('"+p.getFname()+"','"+p.getMi()+"','"+p.getLname()+"','"+p.getAddr()+"',"+p.getAge()+",'"+p.getMed_history()+"',"+p.getPat_status()+");";
-   	 	databaseConnect.execSQL(sql);
-    }
-    
-    //for ContactActivity
-    public void C_insertIntoDatabase(String table_name, Contacts c) throws SQLException{
-   	 	openDataBase();
-   	 	String sql = "INSERT into "+table_name+"(Address,C_number,Fname,Lname,Specialty)" +
-   	 				 "VALUES('"+c.getAddr()+"',"+c.getNum()+",'"+c.getFname()+"','"+c.getLname()+"','"+c.getSpec()+"');";
-   	 	databaseConnect.execSQL(sql);
-    }
-    public Cursor retrieveAllDataWhere(String left_assign, String right_assign ){
+
+    public Cursor retrieveAllDataWhere(String tname, String left_assign, String right_assign ){
+    	openDataBase();
    	 //Retrieve all data!
     	if(left_assign == "status")
-    		return databaseConnect.rawQuery("SELECT * FROM Patients where "+left_assign+"="+Integer.parseInt(right_assign), null);
+    		return databaseConnect.rawQuery("SELECT * FROM "+tname+" where "+left_assign+"="+Integer.parseInt(right_assign), null);
     	else
-    		return databaseConnect.rawQuery("SELECT * FROM Patients where "+left_assign+"='"+right_assign+"'", null);
+    		return databaseConnect.rawQuery("SELECT * FROM "+tname+" where "+left_assign+"='"+right_assign+"'", null);
+    	
+    	
     }
     
-    @Override
-	public synchronized void close() {
- 
-    	    if(databaseConnect != null)
-    		    databaseConnect.close();
- 
-    	    super.close();
- 
-	}
+    public Cursor retrieveSpecificId(String tname, int id){
+    	openDataBase();
+    	return databaseConnect.rawQuery("SELECT * FROM "+tname+" where _id="+id, null);
+    }
+    
+/*=====================INSERTING VALUES INTO DB=====================*/    
+    public void insertIntoDatabase(String table_name, ContentValues values) throws SQLException{
+   	 	openDataBase();
+   	 	try {
+   	 		databaseConnect.insert(table_name, null, values);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+   	 	close();
+    }
+    
+/*=====================UPDATING VALUES INTO DB=====================*/      
+    public void updateSpecificId(ContentValues values, String tname, int id){
+    	openDataBase();
+       	String where  = "_id = "+id;
+    	try {
+    		 databaseConnect.update(tname, values, where, null);
+    		
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+    	close();
+     }
+
+/*=====================DELETING VALUES INTO DB=====================*/     
+    public void deleteRecordById(String table, int id)
+    {
+    	openDataBase();
+    	String where  = "_id = "+id;
+    		try {
+    	    	databaseConnect.delete(table, where, null);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+    	close();
+    }
+    
     
 	@Override
 	public void onCreate(SQLiteDatabase arg0) {

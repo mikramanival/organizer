@@ -1,14 +1,13 @@
 package com.organizer.medical.others;
 
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 
 import java.util.Set;
 
-import com.organizer.medical.activities.PatientActivity;
 import com.organizer.medical.activities.R;
+import com.organizer.medical.activities.R.id;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -20,20 +19,22 @@ import android.widget.LinearLayout;
 import android.widget.SectionIndexer;
 import android.widget.TextView;
 
-public class CustomAdapter extends ArrayAdapter<Patients> implements SectionIndexer {
+
+
+public class ContactAdapter extends ArrayAdapter<Contacts> implements SectionIndexer {
 	int resource;
 	String response;
 	Context context;
 	  private HashMap<String, Integer> alphaIndexer;
 	  private String[] sections;
 	  
-	public CustomAdapter(Context context, int resource,	ArrayList<Patients> patients) {
-		super(context, resource, patients);
+	public ContactAdapter(Context context, int resource,ArrayList<Contacts> contacts) {
+		super(context, resource, contacts);
 		alphaIndexer = new HashMap<String, Integer>();
-        for (Patients p : patients)
+        for (Contacts c : contacts)
         { 
         	int i = 0;
-            String s = p.getFname().substring(0, 1).toUpperCase();
+            String s = c.getFname().substring(0, 1).toUpperCase();
             if (!alphaIndexer.containsKey(s))
                alphaIndexer.put(s, i);
             i++;
@@ -53,7 +54,7 @@ public class CustomAdapter extends ArrayAdapter<Patients> implements SectionInde
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		FrameLayout lv;
-		Patients p = getItem(position);
+		Contacts p = getItem(position);
 		if(convertView == null)
 		{
 			lv = new FrameLayout(getContext());
@@ -68,10 +69,14 @@ public class CustomAdapter extends ArrayAdapter<Patients> implements SectionInde
 			lv = (FrameLayout) convertView;
 		}
 		
-		TextView full_name = (TextView) lv.findViewById(R.id.full_name);
-		TextView mark_id = (TextView) lv.findViewById(R.id.pat_id);
-		mark_id.setText(Integer.toString(p.getId()));
+		TextView full_name = (TextView) lv.findViewById(R.id.full_name_c);
 		full_name.setText(p.toString());
+		TextView spec = (TextView) lv.findViewById(R.id.spec_c);
+		spec.setText(p.toString());
+		TextView address = (TextView) lv.findViewById(R.id.address_c);
+		address.setText(p.toString());
+		TextView num = (TextView) lv.findViewById(R.id.number_c);
+		num.setText(p.toString());
 
 		return lv;
 	}
@@ -92,3 +97,4 @@ public class CustomAdapter extends ArrayAdapter<Patients> implements SectionInde
 	}
 	
 }
+

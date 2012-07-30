@@ -11,6 +11,7 @@ import com.organizer.medical.others.Patients;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.os.Bundle;
@@ -69,12 +70,8 @@ public class ContactActivity extends Activity {
 						p.setNum(Integer.parseInt(numbr.getText().toString()));
 						
 						
-						
-					
-							dbHelper.C_insertIntoDatabase("Contacts", p);
-							
-					
-						dbHelper.close();
+
+						insertNewPatient(p);
 						Log.d("VALUES", p.toString());
 						loadList(0);
 						d.cancel();
@@ -116,7 +113,7 @@ public class ContactActivity extends Activity {
 	        		
 	        		c.moveToNext();
 	        	}
-	     
+	        	dbHelper.close();
         	Log.d("rowcount",Integer.toString(c.getCount()));
 	        dbHelper.close();
 	    
@@ -142,5 +139,13 @@ public class ContactActivity extends Activity {
         return true;
     }
 
-    
+    public void insertNewPatient(Contacts p){
+    	ContentValues valuesToinsert = new ContentValues();
+    	valuesToinsert.put("Address", p.getAddr());
+    	valuesToinsert.put("C_number", p.getNum());
+    	valuesToinsert.put("Fname", p.getFname());
+    	valuesToinsert.put("Lname", p.getLname());
+    	valuesToinsert.put("Specialty", p.getSpec());
+    	dbHelper.insertIntoDatabase("Contacts", valuesToinsert);
+    }
 }
