@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu_settings"
+        android:title="@string/menu_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+     <item 
+        android:id="@+id/in_pat" 
+        android:title="In-Patient" 
+        android:icon="@android:drawable/ic_menu_compass" />
+    <item 
+        android:id="@+id/out_pat" 
+        android:title="Out-Patient"  
+        android:icon="@android:drawable/ic_menu_agenda" />
+     <item 
+        android:id="@+id/all_pat" 
+        android:title="All" 
+        android:icon="@android:drawable/ic_menu_compass" />
+  
+</menu>

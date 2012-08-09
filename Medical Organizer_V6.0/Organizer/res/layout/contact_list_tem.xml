@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/list_item_id" >
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:src="@drawable/blank_pic" android:contentDescription="TODO"/>
+
+        <TextView
+            android:id="@+id/full_name_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginLeft="85dp"
+            android:textSize="20sp"/>
+
+        
+	    <TextView
+            android:id="@+id/spec_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="85dp"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+                
+        <TextView
+            android:id="@+id/address_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:layout_marginLeft="85dp"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+        
+
+        
+        <TextView
+            android:id="@+id/number_c"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:layout_marginLeft="85dp"
+            android:textColor="@android:color/darker_gray"
+            android:textSize="15sp" />
+
+         <TextView
+            android:id="@+id/con_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="id"
+            android:visibility="gone"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+         
+          <ImageButton
+            android:id="@+id/delete"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_gravity="right"
+            android:layout_marginRight="60dp"
+            android:layout_marginTop="4dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_menu_delete" 
+            android:visibility="gone"/>
+        
+    
+</FrameLayout>
