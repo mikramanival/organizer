@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/sched_list_item" >
+
+
+
+    <TextView
+        android:id="@+id/event_rem_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:paddingLeft="15dp"
+        android:layout_marginLeft="14dp"
+        android:text="Time | Title Here!"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#504E4E" />
+
+
+
+    <TextView
+        android:id="@+id/sched_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Schedule ID"
+        android:visibility="gone" />
+
+    <ImageView
+        android:id="@+id/alarm_clock"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_gravity="left"
+        android:layout_marginTop="2dp"
+        android:layout_marginLeft="2dp"
+        android:visibility="invisible"
+        android:src="@drawable/alarm_clock" />
+
+    <ImageButton
+        android:id="@+id/delete_sched"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginRight="10dp"
+        android:layout_gravity="right"
+        android:visibility="invisible"
+        android:background="@android:color/transparent"
+        android:src="@drawable/note_delete"
+        android:clickable="true"
+        android:focusable="true"/>
+
+</FrameLayout>
