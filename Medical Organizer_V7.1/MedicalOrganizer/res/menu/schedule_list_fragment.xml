@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item android:id="@+id/menu_settings"
+        android:title="@string/menu_settings"
+        android:orderInCategory="100"
+        android:showAsAction="never" />
+     
+    <item 
+        android:id="@+id/add_event" 
+        android:title="Add Event" 
+        android:icon="@android:drawable/ic_menu_compass" />
+     
+    <item 
+        android:id="@+id/calendar" 
+        android:title="Calendar" 
+        android:icon="@android:drawable/ic_menu_compass" />
+    
+    <item 
+        android:id="@+id/filter_event_type" 
+        android:title="Filter Event Type" 
+        android:icon="@android:drawable/ic_menu_compass" />
+
+
+</menu>
