@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item android:id="@+id/add_event_on"
+          android:title="Add Event On"/>
+	
+	<item android:id="@+id/show_event_on"
+	  	  android:title="Show Event On"/>
+	
+	    <item android:id="@+id/today"
+	 	 	  android:title="Today"/>
+    
+</menu>
