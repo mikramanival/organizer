@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    
+      <TextView
+          android:id="@+id/textView4"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:background="@android:color/darker_gray"
+          android:text="New Event"
+  		  android:paddingLeft="10dp"
+          android:paddingTop="5dp"
+          android:paddingBottom="5dp"
+          android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+	<RelativeLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	   	android:gravity="center" 
+	   	android:padding="8dp">
+	
+	    <LinearLayout
+	        android:id="@+id/lin_layout"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_alignParentTop="true"
+	        android:orientation="horizontal" >
+	
+	        <ToggleButton
+	            android:id="@+id/toggle_alarm"
+	            android:layout_width="50dp"
+	            android:layout_height="35dp"
+	            android:layout_gravity="center"
+	            android:text="ToggleButton" />
+	
+	        <ImageView
+	            android:id="@+id/imageView1"
+	            android:layout_width="32dp"
+	            android:layout_height="32dp"
+	            android:layout_gravity="center"
+	            android:src="@drawable/alarm_clock" />
+	
+	        <TimePicker
+	            android:id="@+id/time_picker"
+	            android:layout_width="wrap_content"
+	            android:layout_height="125dp" />
+	    </LinearLayout>
+	
+	    <RadioGroup
+	        android:id="@+id/type"
+	        android:layout_width="fill_parent"
+	        android:layout_height="30dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_below="@+id/lin_layout"
+	        android:gravity="center"
+	        android:orientation="horizontal"
+	        android:layout_margin="10dp"
+	        android:padding="5dp" >
+	
+	        <RadioButton
+	            android:id="@+id/reminder"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="Reminder" />
+	
+	        <RadioButton
+	            android:id="@+id/event"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:layout_toRightOf="@+id/in"
+	            android:text="Event" />
+	    </RadioGroup>
+	
+	    <TextView
+	        android:id="@+id/textView1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentLeft="true"
+	        android:layout_below="@+id/type"
+	        android:text="Title"
+	        android:textSize="15sp" />
+	
+	    <EditText
+	        android:id="@+id/title"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/textView1"
+	        android:ems="10"
+	        android:hint="Enter Event Title.."
+	        android:inputType="textPersonName" />
+	
+	    <TextView
+	        android:id="@+id/textView2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/title"
+	        android:text="Location"
+	        android:textSize="15sp" />
+	
+	    <EditText
+	        android:id="@+id/location"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/textView2"
+	        android:ems="10"
+	        android:hint="Enter Event Location.."
+	        android:inputType="textPostalAddress" />
+	
+	    <TextView
+	        android:id="@+id/textView3"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/location"
+	        android:text="Description"
+	        android:textSize="15sp"/>
+	
+	    <EditText
+	        android:id="@+id/desc"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/textView3"
+	        android:hint="Enter Event Description.."
+	        android:inputType="textMultiLine" >
+	    </EditText>
+	
+	    <TableLayout
+	        android:id="@+id/t_lay_sched"
+	        android:layout_width="fill_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_below="@+id/desc" >
+	
+	        <TableRow
+	            android:id="@+id/t_row"
+	            android:layout_width="fill_parent"
+	            android:layout_height="0dp"
+	            android:layout_weight="1"
+	            android:padding="5dp" >
+	
+	            <Button
+	                android:id="@+id/cancel_edit_sched"
+	                android:layout_width="fill_parent"
+	                android:layout_height="40dp"
+	                android:layout_weight="1"
+	                android:text="Cancel" />
+	
+	            <Button
+	                android:id="@+id/save_event"
+	                android:layout_width="fill_parent"
+	                android:layout_height="40dp"
+	                android:layout_weight="1"
+	                android:text="Save" />
+	        </TableRow>
+	
+	    </TableLayout>
+
+	  
+	</RelativeLayout>
+</LinearLayout>
+
