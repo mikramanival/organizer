@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item 
+        android:id="@+id/impt" 
+        android:title="Import Contacts" 
+        android:icon="@drawable/ic_import_contacts" 
+        android:showAsAction="ifRoom|withText"/>
+ 
+    <item 
+       android:id="@+id/add"
+        android:title="Add Contacts"
+        android:icon="@drawable/ic_add_people"
+        android:showAsAction="ifRoom|withText"  />
+</menu>

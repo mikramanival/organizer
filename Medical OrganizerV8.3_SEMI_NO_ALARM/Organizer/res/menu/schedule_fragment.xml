@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+	<item android:id="@+id/show_event_on"
+	  	  android:title="Show Event On"
+	  	  android:showAsAction="ifRoom|withText"
+	  	  android:icon="@drawable/ic_show_agenda_list"/>
+	
+	<item android:id="@+id/today"
+	 	  android:title="Today"
+	 	  android:icon="@drawable/ic_today"
+	 	  android:showAsAction="ifRoom|withText"/>
+	    
+    <item android:id="@+id/add_event_on"
+          android:title="Add Event On"
+          android:icon="@drawable/ic_add_event"
+          android:showAsAction="ifRoom|withText"/>
+	
+    
+</menu>
