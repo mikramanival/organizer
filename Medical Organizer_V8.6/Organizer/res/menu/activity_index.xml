@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    
+    <item android:id="@+id/back"
+          android:title="Login"
+          android:icon="@drawable/ic_cancel"
+          android:showAsAction="ifRoom|withText"/>
+ 
+	<item android:id="@+id/register"
+	   	  android:title="Login"
+          android:icon="@drawable/ic_login"
+          android:showAsAction="ifRoom|withText"/>
+</menu>
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      android:id="@+id/patient_item"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:padding="5dp">
+
+      <TextView
+          android:id="@+id/full_name"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:text="Sample Testing, sample T."
+          android:textSize="15sp"/>
+
+      <TextView
+          android:id="@+id/hospital_details"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:text="Hospital Details"
+          android:textSize="12sp"
+          android:layout_marginTop="15dp"
+          android:textColor="@android:color/darker_gray" />
+
+ </FrameLayout>

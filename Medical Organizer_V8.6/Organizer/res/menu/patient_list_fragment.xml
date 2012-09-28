@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+     <item 
+        android:id="@+id/filter" 
+        android:title="Filter View" 
+        android:icon="@drawable/ic_filter_type"
+        android:showAsAction="ifRoom|withText" />
+     
+     <item 
+        android:id="@+id/add" 
+        android:title="Add Patient" 
+        android:icon="@drawable/ic_add_people"
+        android:showAsAction="ifRoom|withText" />
+	
+	
+</menu>
